@@ -5,8 +5,16 @@ const services = require('../services/render')
 
 route.get('/',services.homeRoutes);
 
+/** 
+*@description add users
+*@method GET /add-user
+**/
 route.get('/add-user',services.add_user);
 
+/** 
+*@description update users
+*@method GET /update-user
+**/
 route.get('/update-user',services.update_user);
 
 module.exports = route

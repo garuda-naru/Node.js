@@ -3,11 +3,15 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyparser = require('body-parser');
 const path = require('path')
-
+const connectDB = require('./server/database/conection');
 const app = express();
 
 //log requests
+
 app.use(morgan('tiny'));
+
+//connect db
+connectDB();
 
 //parse request to bodyparser
 app.use(bodyparser.urlencoded({extended:true}))
